@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blog-server
+spec:
+  selector:
+    matchLabels:
+      app: blog-server
+  template:
+    metadata:
+      labels:
+        app: blog-server

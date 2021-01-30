@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blog-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blog-server
+  template:
+    metadata:
+      labels:
+        app: blog-server
+        env: dev
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:alpine
+        resources:
+          limits:
+            cpu: "100m"
+            memory: "64Mi"
+          requests:
+            cpu: "100m"
+            memory: "64Mi"
